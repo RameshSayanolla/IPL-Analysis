@@ -1,0 +1,68 @@
+import pandas as pd
+
+# Load IPL dataset
+
+ipl_data = pd.read_csv('ipl_data.csv')
+
+# Total win by team for season
+
+total_win_by_team = ipl_data.groupby(['season', 'winner']).size().reset_index(name='total_wins')
+print("Total win by team for each season:\n", total_win_by_team)
+
+# Match won by venue
+
+match_won_by_venue = ipl_data.groupby('venue')['winner'].value_counts().reset_index(name='total_wins')
+print("\nMatch won by venue:\n", match_won_by_venue)
+
+# Count of wins by toss decision
+
+toss_decision_count = ipl_data['toss_decision'].value_counts()
+print("\nCount of wins by toss decision:\n", toss_decision_count)
+
+# Total tournament sixes and fours
+
+total_sixes = ipl_data['total_sixes'].sum()
+total_fours = ipl_data['total_fours'].sum()
+print("\nTotal tournament sixes:", total_sixes)
+print("Total tournament fours:", total_fours)
+
+# Total innings
+
+total_innings = len(ipl_data)
+print("Total innings:", total_innings)
+
+# Highest strike rate
+
+highest_strike_rate = ipl_data.groupby('batsman')['strike_rate'].max().reset_index()
+print("\nHighest strike rate by batsman:\n", highest_strike_rate)
+
+# Winner season-wise
+
+winner_season_wise = ipl_data.groupby('season')['winner'].first()
+
+print("\nWinner season-wise:\n", winner_season_wise)
+
+# Orange Cap winner
+
+orange_cap_winner = ipl_data.groupby('season')['player_of_the_series'].first()
+
+print("\nOrange Cap winner season-wise:\n", orange_cap_winner)
+
+# Purple Cap winner
+
+purple_cap_winner = ipl_data.groupby('season')['purple_cap_winner'].first()
+
+print("\nPurple Cap winner season-wise:\n", purple_cap_winner)
+
+
+
+
+
+
+
+
+
+
+
+
+
