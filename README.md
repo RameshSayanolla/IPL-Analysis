@@ -36,6 +36,9 @@ EDA involved exploring the IPL data to answer key questions, such as:
 
 ## Data Analysis
 
+![IPL Analysis](https://github.com/RameshSayanolla/IPL-Analysis/assets/170460509/27797779-a41a-408b-bbee-ca956d0e1518)
+
+
 ## Results/Findings
 
 ### The analysis results are summarized as follows:
